@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "d9fdf5b11807aaba0f1ea81f74c6aafc03559c372d0d26656c6b7c076319eea2154b1026adda2bdbe84aade0445d6674e07a764a72d7e9c3af618bc5118d3ddfffad53afd4874cc27dfa98ba4c5f10a3d9bd76f14996800d2ac1beee77dc3dfdc8b1087fdab62a94253233b94cf8274dbfec432aebda0bb2160a1ef1d4d2444a805015124fda1cdd8d2f210690e995045eb81bf420dd803494d6bf5aa82cc0d2e0502f6f5bfe7d6789a8f9e3b2582fa293ec3d81e1d1240a0932e2396c702741423afa2c2d593d97a8d72fed3765fe1cc2b281ddbd23b61b7b908df24846aeb23f8584ef1f9a6142680616f29bff01eb63ed7181ab97ae4d68f6c5549dddd50f",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/realtimeapi"
+}
